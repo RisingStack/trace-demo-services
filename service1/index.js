@@ -1,4 +1,4 @@
-require('@risingstack/trace')
+const trace = require('@risingstack/trace')
 
 const express = require('express')
 const rp = require('request-promise')
@@ -8,6 +8,9 @@ const SERVICE_2_URL = process.env.SERVICE_2_URL
 const PORT = process.env.VCAP_APP_PORT || process.env.PORT || 3000
 
 app.get('/', function (req, res) {
+  trace.report('user-agent', {
+    agent: req.headers['user-agent']
+  })
   rp(SERVICE_2_URL)
     .then(() => {
       res.json({

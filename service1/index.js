@@ -8,7 +8,7 @@ const SERVICE_2_URL = process.env.SERVICE_2_URL
 const PORT = process.env.VCAP_APP_PORT || process.env.PORT || 3000
 
 app.get('/', function (req, res) {
-  rp(SERVICE_2)
+  rp(SERVICE_2_URL)
     .then(() => {
       res.json({
         status: 'ok'

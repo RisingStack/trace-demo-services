@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@risingstack/trace": "2.14.2",
+    "@risingstack/trace": "2.27.2",
     "express": "4.13.4",
     "request-promise": "2.0.1"
   },
